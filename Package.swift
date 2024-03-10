@@ -1,4 +1,4 @@
-// swift-tools-version: 5.9
+// swift-tools-version: 5.10
 import PackageDescription
 let package = Package(
     name: "<Your name here>",
@@ -6,19 +6,19 @@ let package = Package(
         .macOS(.v13)
     ],
     products: [
-        .executable(name: "<Your name here>", targets: ["Website"])
+        .executable(name: "<Your name here>", targets: ["Sailor App"])
     ],
     dependencies: [
         .package(url: "https://github.com/SailorWebFramework/Sailor", branch: "releases/v0.1"),
-        .package(url: "https://github.com/swiftwasm/carton", branch: "main")
+        .package(url: "https://github.com/swiftwasm/carton", from: "1.0.0")
     ],
     targets: [
         .executableTarget(
-            name: "Website",
+            name: "Sailor App",
             dependencies: [
                 "Sailor"
             ],
-            path: "src",
+            path: "Sources",
             resources: [
                 // .process("Resources/")
                 //🧭Compass Generated Resources?

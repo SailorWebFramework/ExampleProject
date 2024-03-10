@@ -1,7 +1,7 @@
 import Sailor
 
 @main
-struct web: Website {
+struct Entrypoint: Website {
 
     typealias WebRoutes = AppRoutes
     
