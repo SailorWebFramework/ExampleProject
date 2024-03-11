@@ -8,9 +8,24 @@ struct Entrypoint: Website {
     init() {
         print("Initialized project")
     }
+    
+    @State var number: Int = 0;
   
     var body: some Page {
-        Div("Hello, World!")
+        Div {
+            //TODO: abstract linking away
+            Link(rel: "stylesheet", href: "YOURNAME_SailorApp.resources/main.css")
+            Div("Hello, World!")
+                .classes("container")
+            Div {
+                P("Count: \(number)")
+            }
+            Button("Add")
+                .onClick {
+                    number+=1;
+                }
+            Img(src: "YOURNAME_SailorApp.resources/favicon.ico", alt: "Sailor logo")
+        }
     }
 }
 
