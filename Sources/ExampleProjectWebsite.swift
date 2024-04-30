@@ -1,55 +1,25 @@
 import Sailor
 
 @main
-struct Entrypoint: Website {
-
-    typealias WebRoutes = AppRoutes
+struct ExampleProjectWebsite: Website {
     
-    init() {
-        print("Initialized project")
+    var head: some Head {
+        HTML.Head {
+            HTML.Title("Example Project Website")
+            HTML.Link(rel: "icon", href: "favicon.ico")
+        }
     }
-    
-    @State var number: Int = 0;
-  
-    var body: some Page {
-        Div {
-            //TODO: abstract linking away
-            Link(rel: "stylesheet", href: "YOURNAME_SailorApp.resources/main.css")
-            Div("Hello, World!")
-                .classes("container")
-            Div {
-                P("Count: \(number)")
+    var body: some Body {
+        HTML.Body {
+            HTML.Header {
+                Span("Header Text!")
             }
-            Button("Add")
-                .onClick {
-                    number+=1;
-                }
-            Img(src: "YOURNAME_SailorApp.resources/favicon.ico", alt: "Sailor logo")
+            
+            HomePage()
+            
+            HTML.Footer {
+                Span("Footer Text!")
+            }
         }
     }
 }
-
-// struct NavBar: Page {
-//     @Environment(\.navigation) var navigation: Navigation
-//     @Environment(\.url) var url
-
-//     var body: some Page {
-//         Div {
-//             Div("URL: \(url)")
-//             Div {
-//                 Button("About")
-//                     .onClick {
-//                         navigation.go(to: .about)
-//                     }
-//                 Button("Home")
-//                     .onClick {
-//                         navigation.go(to: .home)
-//                     }
-//                 Button("Exlore")
-//                     .onClick {
-//                         navigation.go(to: .explore)
-//                     }
-//             }
-//         }
-//     }
-// }

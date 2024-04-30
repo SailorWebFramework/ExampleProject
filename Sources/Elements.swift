@@ -7,9 +7,6 @@
 
 import Sailor
 
-typealias Header = HTML.Header
-typealias Footer = HTML.Footer
-
 typealias Div = HTML.Div
 typealias Span = HTML.Span
 typealias Img = HTML.Img

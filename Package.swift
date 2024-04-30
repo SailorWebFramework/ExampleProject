@@ -1,33 +1,29 @@
 // swift-tools-version: 5.9
 import PackageDescription
+
 let package = Package(
-    name: "YOURNAME",
+    name: "ExampleProject",
     platforms: [
         .macOS(.v13)
     ],
     products: [
-        .executable(name: "YOURNAME", targets: ["SailorApp"])
+        .executable(name: "ExampleProject", targets: ["ExampleProject"])
     ],
     dependencies: [
-        .package(url: "https://github.com/SailorWebFramework/Sailor", branch: "releases/v0.1"),
-        .package(url: "https://github.com/swiftwasm/carton", from: "1.0.1")
+//        .package(path: "../Sailor"),
+        .package(url: "https://github.com/swiftwasm/carton", from: "1.0.3"),
+        .package(url: "https://github.com/SailorWebFramework/Sailor", from: "0.2.0")
+
     ],
     targets: [
         .executableTarget(
-            name: "SailorApp",
+            name: "ExampleProject",
             dependencies: [
                 "Sailor"
             ],
             path: "Sources",
             resources: [
-//                 .process("Resources/")
-                 .process("Resources/main.css"),
-                 .process("Resources/favicon.ico")
-                //🧭Compass Generated Resources?
-                //⛵Sailor Generated Resources (DONT REMOVE THIS COMMENT)
-//                .process("Resources/"),
-//                .process("Resources/Assests/")
-                //⛵End (DONT REMOVE THIS COMMENT)
+                .process("Resources/favicon.ico")
             ]
         ),
     ]
