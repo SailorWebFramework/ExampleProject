@@ -26,10 +26,10 @@ struct HomePage: Page {
             
             Button(num == 10 ? "Reset" : "Press Me!")
                 .onClick {
-                    if num == 11 {
+                    if num == 10 {
                         self.num = -1
                     }
-                    num += 1
+                    self.num += 1
                 }
         }
         .style {
