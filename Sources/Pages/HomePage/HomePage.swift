@@ -42,7 +42,6 @@ struct HomePage: Page {
                         num = 0
                     }
             }
-
         }
         .style {
             if num % 3 == 0 {
