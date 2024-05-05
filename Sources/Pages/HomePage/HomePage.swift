@@ -1,4 +1,5 @@
 import Sailor
+import Navigator
 
 struct HomePage: Page {
     
@@ -7,33 +8,47 @@ struct HomePage: Page {
     var body: some Page {
         Div {
             
+            H1("Welcome")
+
+            Paragraph {
+                """
+                This example project is currently being updated and improved!
+                """
+            }
+            
             Img(src: "favicon.ico")
             
-            H1("your number is \(num)")
-            
             Div {
-                H2("\(num) / 10")
-
-                if num == 10 {
-                    H2("Number hit 10!")
-                        .onAppear {
-                            print("number hit 10!")
-                        }
+                Span("counter: \(num)")
+                               
+                if num % 3 == 0 {
+                    Span {
+                        " || \(num) is divisible by 3"
+                    }
                 }
-            }.style {
+                
+            }
+            .style {
                 CSS.padding(.px(10))
             }
             
-            Button(num == 10 ? "Reset" : "Press Me!")
-                .onClick {
-                    if num == 11 {
-                        self.num = -1
+            Div {
+                Button("Press Me!")
+                    .onClick {
+                        num += 1
                     }
-                    num += 1
-                }
+                Button("Reset")
+                    .onClick {
+                        num = 0
+                    }
+            }
+
         }
         .style {
-            CSS.backgroundColor(.red)
+            if num % 3 == 0 {
+                CSS.backgroundColor(.red)
+            }
+            
             CSS.padding(.px(10))
         }
         

@@ -10,16 +10,16 @@ let package = Package(
         .executable(name: "ExampleProject", targets: ["ExampleProject"])
     ],
     dependencies: [
-//        .package(path: "../Sailor"),
         .package(url: "https://github.com/swiftwasm/carton", from: "1.0.3"),
-        .package(url: "https://github.com/SailorWebFramework/Sailor", from: "0.2.0")
-
+        .package(url: "https://github.com/SailorWebFramework/Sailor", from: "0.2.1"),
+        .package(url: "https://github.com/SailorWebFramework/Navigator", from: "0.1.0")
     ],
     targets: [
         .executableTarget(
             name: "ExampleProject",
             dependencies: [
-                "Sailor"
+                "Sailor",
+                "Navigator"
             ],
             path: "Sources",
             resources: [

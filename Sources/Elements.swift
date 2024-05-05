@@ -19,7 +19,7 @@ typealias H4 = HTML.H4
 typealias H5 = HTML.H5
 typealias H6 = HTML.H6
 
-typealias A = HTML.A
-typealias P = HTML.P
-typealias B = HTML.B
-typealias I = HTML.I
+typealias Anchor = HTML.A
+typealias Paragraph = HTML.P
+typealias Bold = HTML.B
+typealias Italic = HTML.I
